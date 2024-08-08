@@ -14,14 +14,14 @@ This project provides a comprehensive bash script to streamline the installation
 ## Installation
 1. **Clone the Repository**:
    ```bash
-   git clone https://github.com/rudolf8/apex-for-rocky.git
-   cd apex-for-rocky
+   git clone https://github.com/rudolf8/apex-for-rocky9.git
+   cd apex-for-rocky9
    ```
 
 2. **Run the Script**:
    ```bash
-   chmod +x apex-for-rocky.sh
-   sudo ./apex-for-rocky.sh
+   chmod +x apex-for-rocky9.sh
+   sudo ./apex-for-rocky9.sh
    ```
 
 ## Script Details
