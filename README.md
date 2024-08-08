@@ -14,6 +14,7 @@ This project provides a comprehensive bash script to streamline the installation
 ## Installation
 1. **Clone the Repository**:
    ```bash
+   cd /opt
    git clone https://github.com/rudolf8/apex-for-rocky9.git
    cd apex-for-rocky9
    ```
