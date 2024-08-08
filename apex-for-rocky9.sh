@@ -42,26 +42,20 @@ alternatives --set java /usr/lib/jvm/java-17-openjdk-17*/bin/java
 cd /opt
 
 # download latest oracle-database-preinstall-23ai
-#wget https://yum.oracle.com/repo/OracleLinux/OL8/appstream/x86_64/getPackage/oracle-database-preinstall-23ai-1.0-2.el8.x86_64.rpm
-
-wget https://oraclelinux.pkgs.org/9/ol9-appstream-x86_64/
-
-
-https://oraclelinux.pkgs.org/9/ol9-appstream-x86_64/oracle-database-preinstall-23ai-1.0-2.el9.x86_64.rpm.html
+curl -JLO https://yum.oracle.com/repo/OracleLinux/OL9/appstream/x86_64/getPackage/oracle-database-preinstall-23ai-1.0-2.el9.x86_64.rpm
 
 # download Oracle 23AI FREE database
 curl -JLO https://download.oracle.com/otn-pub/otn_software/db-free/oracle-database-free-23ai-1.0-1.el9.x86_64.rpm
-
 
 # install package 
 dnf -y install /opt/oracle-database-preinstall-23ai-1.0-2.el8.x86_64.rpm
 
 # install database 
 dnf -y localinstall /opt/oracle-database-free-23ai-1.0-1.el9.x86_64.rpm
-export DB_PASSWORD=Chevapiand1beer!
 
-(echo "${DB_PASSWORD}"; echo "${DB_PASSWORD}";) | /etc/init.d/oracle-free-23c configure
-sed -i '/^FREE:\/opt\/oracle\/product\/23c\/dbhomeFree:/s/:N$/:Y/' /etc/oratab
+#export DB_PASSWORD=Chevapiand1beer!
+#(echo "${DB_PASSWORD}"; echo "${DB_PASSWORD}";) | /etc/init.d/oracle-free-23c configure
+#sed -i '/^FREE:\/opt\/oracle\/product\/23c\/dbhomeFree:/s/:N$/:Y/' /etc/oratab
 
 
 
