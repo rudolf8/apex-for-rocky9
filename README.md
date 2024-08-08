@@ -14,14 +14,14 @@ This project provides a comprehensive bash script to streamline the installation
 ## Installation
 1. **Clone the Repository**:
    ```bash
-   git clone https://github.com/yourusername/oracle-23c-install-script.git
-   cd oracle-23c-install-script
+   git clone https://github.com/rudolf8/apex-for-rocky.git
+   cd apex-for-rocky
    ```
 
 2. **Run the Script**:
    ```bash
-   chmod +x install_oracle.sh
-   sudo ./install_oracle.sh
+   chmod +x apex-for-rocky.sh
+   sudo ./apex-for-rocky.sh
    ```
 
 ## Script Details
