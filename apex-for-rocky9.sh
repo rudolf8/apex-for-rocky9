@@ -48,7 +48,7 @@ curl -JLO https://yum.oracle.com/repo/OracleLinux/OL9/appstream/x86_64/getPackag
 curl -JLO https://download.oracle.com/otn-pub/otn_software/db-free/oracle-database-free-23ai-1.0-1.el9.x86_64.rpm
 
 # install package 
-dnf -y install /opt/oracle-database-preinstall-23ai-1.0-2.el8.x86_64.rpm
+dnf -y install /opt/oracle-database-preinstall-23ai-1.0-2.el9.x86_64.rpm
 
 # install database 
 dnf -y localinstall /opt/oracle-database-free-23ai-1.0-1.el9.x86_64.rpm
