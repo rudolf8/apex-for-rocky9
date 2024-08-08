@@ -1,9 +1,9 @@
 # Oracle 23c AI Database Installation Script for Rocky Linux 9
 
-This project provides a comprehensive bash script to streamline the installation of Oracle 23c AI Database, Oracle APEX 24, and Oracle ORDS on Rocky Linux 9. The script automates the setup process, ensuring a smooth and efficient installation experience.
+This project provides a comprehensive bash script to streamline the installation of Oracle 23AI Free Database, Oracle APEX 24, and Oracle ORDS on Rocky Linux 9. The script automates the setup process, ensuring a smooth and efficient installation experience.
 
 ## Features
-- **Oracle 23c AI Database**: Installs the latest Oracle 23c AI database, enabling advanced AI capabilities and vector search functionalities.
+- **Oracle 23AI Free Database**: Installs the latest Oracle 23AI Free database, enabling advanced AI capabilities and vector search functionalities.
 - **Oracle APEX 24**: Sets up Oracle Application Express (APEX) 24, a powerful, web-based development platform for building enterprise applications.
 - **Oracle ORDS**: Configures Oracle REST Data Services (ORDS), facilitating the creation of RESTful web services for your Oracle Database.
 
