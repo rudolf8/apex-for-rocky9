@@ -3,6 +3,8 @@
 # Start the timer
 start_time=$(date +%s)
 
+cd /opt
+
 # Get APEX
 curl -O https://download.oracle.com/otn_software/apex/apex-latest.zip
 
