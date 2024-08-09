@@ -13,7 +13,7 @@ unzip -q apex-latest.zip
 cd apex
 
 # Set the path to the sqlplus executable
-SQLPLUS_PATH="/opt/oracle/product/23ai/dbhomeFree/sqlplus"
+SQLPLUS_PATH="/opt/oracle/product/23ai/dbhomeFree/bin/sqlplus"
 
 # Install APEX
 $SQLPLUS_PATH / as sysdba <<EOF
