@@ -12,15 +12,18 @@ curl -O https://download.oracle.com/otn_software/apex/apex-latest.zip
 unzip -q apex-latest.zip
 cd apex
 
+# Set the path to the sqlplus executable
+SQLPLUS_PATH="/opt/oracle/product/23ai/dbhomeFree/sqlplus"
+
 # Install APEX
-sqlplus / as sysdba <<EOF
+$SQLPLUS_PATH / as sysdba <<EOF
 ALTER SESSION SET CONTAINER = FREEPDB1;
 @apexins.sql SYSAUX SYSAUX TEMP /i/
 EXIT;
 EOF
 
 # Set Accounts
-sqlplus / as sysdba <<EOF
+$SQLPLUS_PATH / as sysdba <<EOF
 ALTER SESSION SET CONTAINER = FREEPDB1;
 ALTER USER APEX_PUBLIC_USER ACCOUNT UNLOCK;
 ALTER USER APEX_PUBLIC_USER IDENTIFIED BY ApexForRocky9!;
@@ -28,7 +31,7 @@ EXIT;
 EOF
 
 # Create ADMIN Account silently
-sqlplus / as sysdba <<EOF
+$SQLPLUS_PATH / as sysdba <<EOF
 ALTER SESSION SET CONTAINER = FREEPDB1;
 BEGIN
     APEX_UTIL.set_security_group_id( 10 );
