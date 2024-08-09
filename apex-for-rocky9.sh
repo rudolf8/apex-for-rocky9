@@ -1,8 +1,7 @@
 #!/bin/bash
 # bash script to install Oracle 23AI FREE datebase and APEX 24 (with ORDS) on Rocky Linux 9x
 
-# Start the timer
-# start_time=$(date +%s)
+start_time=$(date +%s)
 
 # check if user is root
 if [[ $(whoami) != "root" ]]; then
@@ -32,12 +31,9 @@ dnf install -y policycoreutils policycoreutils-python-utils smartmontools syssta
 # disable SElinux
 grubby --update-kernel ALL --args selinux=0
 
-# install Java 17
+# get & install Java 17
 dnf install -y java-17-openjdk
 alternatives --set java /usr/lib/jvm/java-17-openjdk-17*/bin/java
-
-# download Java 
-# wget https://download.oracle.com/java/17/latest/jdk-17_linux-x64_bin.rpm
 
 cd /opt
 
@@ -53,13 +49,19 @@ dnf -y install /opt/oracle-database-preinstall-23ai-1.0-2.el9.x86_64.rpm
 # install database 
 dnf -y localinstall /opt/oracle-database-free-23ai-1.0-1.el9.x86_64.rpm
 
-#export DB_PASSWORD=Chevapiand1beer!
-#(echo "${DB_PASSWORD}"; echo "${DB_PASSWORD}";) | /etc/init.d/oracle-free-23c configure
-#sed -i '/^FREE:\/opt\/oracle\/product\/23c\/dbhomeFree:/s/:N$/:Y/' /etc/oratab
+export DB_PASSWORD="ApexRocky9"
+(echo -e "${DB_PASSWORD}\n${DB_PASSWORD}";) | /etc/init.d/oracle-free-23c configure
+
+sed -i 's/:N$/:Y/' /etc/oratab
 
 
+end_time=$(date +%s)
+elapsed_time=$((end_time - start_time))
+hours=$((elapsed_time / 3600))
+minutes=$(( (elapsed_time % 3600) / 60 ))
+seconds=$((elapsed_time % 60))
 
-
+echo "Elapsed time: ${hours}h ${minutes}m ${seconds}s"
 
 
 
