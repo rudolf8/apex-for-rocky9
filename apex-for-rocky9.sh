@@ -50,10 +50,9 @@ dnf -y install /opt/oracle-database-preinstall-23ai-1.0-2.el9.x86_64.rpm
 dnf -y localinstall /opt/oracle-database-free-23ai-1.0-1.el9.x86_64.rpm
 
 export DB_PASSWORD="ApexRocky9"
-(echo -e "${DB_PASSWORD}\n${DB_PASSWORD}";) | /etc/init.d/oracle-free-23c configure
+(echo -e "${DB_PASSWORD}\n${DB_PASSWORD}";) | /etc/init.d/oracle-free-23ai configure
 
-sed -i 's/:N$/:Y/' /etc/oratab
-
+sed -i 's/:N/:Y/' /etc/oratab
 
 end_time=$(date +%s)
 elapsed_time=$((end_time - start_time))
